@@ -1,4 +1,5 @@
-import 'package:camp_yellow/design/FontStyles.dart';
+import 'package:camp_yellow/components/clan_achievements_banner.dart';
+import 'package:camp_yellow/components/clan_featured_performances.dart';
 import 'package:camp_yellow/widgets/clan_status_display.dart';
 import 'package:camp_yellow/widgets/separator.dart';
 import 'package:flutter/material.dart';
@@ -21,29 +22,12 @@ class ClanProfileScreen extends StatelessWidget {
             ClanStatusDisplay(
                 screenHeight: screenHeight, screenWidth: screenWidth),
             Separator(screenHeight: screenHeight),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Achievements',
-                  style: headingFontStyle(screenWidth),
-                ),
-                Row(
-                  children: [
-                    Text(
-                      'Current league',
-                      style: subheadingFontStyle(screenWidth),
-                    ),
-                    Container(
-                      height: screenHeight * 0.1,
-                      child: Image(
-                        image: AssetImage('assets/images/golden_shield.png'),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            )
+            ClanAchievementsBanner(
+                screenHeight: screenHeight, screenWidth: screenWidth),
+            Separator(screenHeight: screenHeight),
+            ClanFeaturedPerformances(
+                screenHeight: screenHeight, screenWidth: screenWidth),
+            Separator(screenHeight: screenHeight),
           ],
         ),
       ),

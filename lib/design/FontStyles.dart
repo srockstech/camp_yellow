@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 TextStyle subheadingFontStyle(double screenWidth) {
   return TextStyle(
     color: Colors.pink,
-    fontSize: screenWidth * 0.05,
+    fontSize: screenWidth * 0.045,
     fontWeight: FontWeight.w500,
   );
 }
