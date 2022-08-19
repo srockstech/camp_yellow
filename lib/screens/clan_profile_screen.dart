@@ -1,3 +1,4 @@
+import 'package:camp_yellow/components/bottom_navigation_menu.dart';
 import 'package:camp_yellow/components/clan_achievements_banner.dart';
 import 'package:camp_yellow/components/clan_featured_performances.dart';
 import 'package:camp_yellow/components/clan_live_activities.dart';
@@ -7,7 +8,6 @@ import 'package:camp_yellow/widgets/clan_status_display.dart';
 import 'package:camp_yellow/widgets/separator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ClanProfileScreen extends StatefulWidget {
   ClanProfileScreen({
@@ -27,11 +27,9 @@ class _ClanProfileScreenState extends State<ClanProfileScreen> {
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.black,
-      bottomNavigationBar: BottomNavigationBar(
-        showUnselectedLabels: false,
-        showSelectedLabels: false,
-        iconSize: screenWidth * 0.07,
-        currentIndex: selectedIndex,
+      bottomNavigationBar: BottomNavigationMenu(
+        screenWidth: screenWidth,
+        selectedIndex: selectedIndex,
         onTap: (index) {
           if (index != selectedIndex) {
             setState(() {
@@ -39,43 +37,6 @@ class _ClanProfileScreenState extends State<ClanProfileScreen> {
             });
           }
         },
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              color: Colors.white,
-            ),
-            label: '',
-            backgroundColor: Colors.black,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.stars_outlined,
-              color: Colors.white,
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              FontAwesomeIcons.rankingStar,
-              color: Colors.white,
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.people_alt_rounded,
-              color: Colors.white,
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: CircleAvatar(
-              foregroundImage: AssetImage('assets/images/performance_pic.jpg'),
-            ),
-            label: '',
-          ),
-        ],
       ),
       body: SafeArea(
         child: ListView(
