@@ -1,12 +1,11 @@
 import 'package:camp_yellow/components/bottom_navigation_menu.dart';
-import 'package:camp_yellow/components/clan_achievements_banner.dart';
+import 'package:camp_yellow/components/clan_achievements.dart';
+import 'package:camp_yellow/components/clan_discussions.dart';
 import 'package:camp_yellow/components/clan_featured_performances.dart';
 import 'package:camp_yellow/components/clan_live_activities.dart';
 import 'package:camp_yellow/components/clan_members.dart';
-import 'package:camp_yellow/design/FontStyles.dart';
 import 'package:camp_yellow/widgets/clan_status_display.dart';
 import 'package:camp_yellow/widgets/separator.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ClanProfileScreen extends StatefulWidget {
@@ -45,7 +44,7 @@ class _ClanProfileScreenState extends State<ClanProfileScreen> {
             ClanStatusDisplay(
                 screenHeight: screenHeight, screenWidth: screenWidth),
             Separator(screenHeight: screenHeight),
-            ClanAchievementsBanner(
+            ClanAchievements(
                 screenHeight: screenHeight, screenWidth: screenWidth),
             Separator(screenHeight: screenHeight),
             ClanFeaturedPerformances(
@@ -54,97 +53,8 @@ class _ClanProfileScreenState extends State<ClanProfileScreen> {
             ClanLiveActivities(
                 screenHeight: screenHeight, screenWidth: screenWidth),
             Separator(screenHeight: screenHeight),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  height: screenHeight * 0.05,
-                  child: Text(
-                    'Clan discussions',
-                    style: headingFontStyle(screenWidth),
-                  ),
-                ),
-                Container(
-                  height: screenHeight * 0.2,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Flexible(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'General thread:',
-                              style: subheadingFontStyle(screenWidth),
-                            ),
-                            Text(
-                              '15 unread messages',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: screenWidth * 0.045,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Flexible(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '(live) Anyone enthu for trading league',
-                              style: subheadingFontStyle(screenWidth),
-                            ),
-                            Text(
-                              '10 unread messages',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: screenWidth * 0.045,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Flexible(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '(live) Anyone enthu for trading league',
-                              style: subheadingFontStyle(screenWidth),
-                            ),
-                            Text(
-                              '10 unread messages',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: screenWidth * 0.045,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  height: screenHeight * 0.05,
-                  child: Center(
-                    child: Text(
-                      'see more',
-                      style: TextStyle(
-                        color: Colors.yellow,
-                        fontSize: screenWidth * 0.03,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            ClanDiscussions(
+                screenHeight: screenHeight, screenWidth: screenWidth),
             Separator(screenHeight: screenHeight),
             ClanMembers(screenHeight: screenHeight, screenWidth: screenWidth),
           ],

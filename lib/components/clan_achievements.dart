@@ -1,8 +1,8 @@
 import 'package:camp_yellow/design/FontStyles.dart';
 import 'package:flutter/material.dart';
 
-class ClanAchievementsBanner extends StatelessWidget {
-  const ClanAchievementsBanner({
+class ClanAchievements extends StatelessWidget {
+  const ClanAchievements({
     Key? key,
     required this.screenHeight,
     required this.screenWidth,
