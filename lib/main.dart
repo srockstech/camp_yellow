@@ -12,6 +12,12 @@ class CampYellow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData.light().copyWith(
+        splashColor: Colors.yellow,
+        colorScheme: ColorScheme.light(
+          secondary: Colors.yellow,
+        ),
+      ),
       debugShowCheckedModeBanner: false,
       home: ClanProfileScreen(),
     );
