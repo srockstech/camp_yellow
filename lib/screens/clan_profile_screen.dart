@@ -33,9 +33,11 @@ class _ClanProfileScreenState extends State<ClanProfileScreen> {
         iconSize: screenWidth * 0.07,
         currentIndex: selectedIndex,
         onTap: (index) {
-          setState(() {
-            selectedIndex = index;
-          });
+          if (index != selectedIndex) {
+            setState(() {
+              selectedIndex = index;
+            });
+          }
         },
         items: [
           BottomNavigationBarItem(
